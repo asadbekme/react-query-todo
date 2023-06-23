@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn React Query",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "React 18",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "NextJS",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "title": "Vue",
+      "completed": false
+    },
+    {
+      "title": "React Hook Form",
+      "completed": true,
+      "id": 5
+    },
+    {
+      "title": "Yup Validator",
+      "completed": true,
+      "id": 6
+    }
+  ]
+}
