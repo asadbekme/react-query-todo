@@ -1,5 +1,5 @@
-import { Container, Divider, Stack } from '@chakra-ui/react';
-import { NewTodo, TodoViewer } from './components';
+import { Container, Divider, Stack } from "@chakra-ui/react";
+import { NewTodo, TodoViewer } from "./components";
 
 function App() {
   return (

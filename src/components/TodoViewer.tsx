@@ -1,29 +1,29 @@
-import { useState } from 'react';
-import { Button, ButtonGroup, Stack } from '@chakra-ui/react';
-import { TodoState } from '../types/todo';
-import { TodoList } from './index';
+import { useState } from "react";
+import { Button, ButtonGroup, Stack } from "@chakra-ui/react";
+import { TodoState } from "../types/todo";
+import { TodoList } from "./index";
 
 const TodoViewer = () => {
-  const [view, setView] = useState<TodoState>('all');
+  const [view, setView] = useState<TodoState>("all");
 
   return (
     <Stack>
       <ButtonGroup>
         <Button
-          variant={view === 'all' ? 'outline' : 'solid'}
-          onClick={() => setView('all')}
+          variant={view === "all" ? "outline" : "solid"}
+          onClick={() => setView("all")}
         >
           all
         </Button>
         <Button
-          variant={view === 'open' ? 'outline' : 'solid'}
-          onClick={() => setView('open')}
+          variant={view === "open" ? "outline" : "solid"}
+          onClick={() => setView("open")}
         >
           open
         </Button>
         <Button
-          variant={view === 'completed' ? 'outline' : 'solid'}
-          onClick={() => setView('completed')}
+          variant={view === "completed" ? "outline" : "solid"}
+          onClick={() => setView("completed")}
         >
           completed
         </Button>

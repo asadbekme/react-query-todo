@@ -1,7 +1,7 @@
-import { List, Spinner } from '@chakra-ui/react';
-import { TodoState } from '../types/todo';
-import { useTodosQuery } from '../hooks/useTodosQuery';
-import { TodoItem } from './index';
+import { List, Spinner } from "@chakra-ui/react";
+import { TodoState } from "../types/todo";
+import { useTodosQuery } from "../hooks/useTodosQuery";
+import { TodoItem } from "./index";
 
 type TodoListProps = {
   state: TodoState;

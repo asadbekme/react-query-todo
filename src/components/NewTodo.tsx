@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { Button, Input, Stack } from '@chakra-ui/react';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { createTodo } from '../services/todos';
-import { Todo } from '../types/todo';
+import { useState } from "react";
+import { Button, Input, Stack } from "@chakra-ui/react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { createTodo } from "../services/todos";
+import { Todo } from "../types/todo";
 
 const NewTodo = () => {
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
 
   const client = useQueryClient();
 
@@ -16,12 +16,12 @@ const NewTodo = () => {
     // },
     onSuccess: (newTodo) => {
       // client.getQueryData(['todos', 'all'])
-      client.setQueriesData<Todo[]>(['todos', 'all'], (oldTodos) => {
+      client.setQueriesData<Todo[]>(["todos", "all"], (oldTodos) => {
         return [...(oldTodos || []), newTodo];
       });
       client.invalidateQueries({
-        queryKey: ['todos', 'all'],
-        refetchType: 'none',
+        queryKey: ["todos", "all"],
+        refetchType: "none",
       });
     },
   });
@@ -30,7 +30,7 @@ const NewTodo = () => {
     event.preventDefault();
     if (title) {
       create(title);
-      setTitle('');
+      setTitle("");
     }
   };
 
