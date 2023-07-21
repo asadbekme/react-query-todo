@@ -1,35 +1,35 @@
 import { Todo, TodoState } from "../types/todo";
 
-const BASE = "http://localhost:3000/todos";
+const BASE_URL = "http://localhost:3000/todos";
 
 export async function fetchTodos(state: TodoState = "all"): Promise<Todo[]> {
   const queries = state === "all" ? "" : `?completed=${state === "completed"}`;
 
-  const res = await fetch(`${BASE}/${queries}`);
+  const response = await fetch(`${BASE_URL}/${queries}`);
 
-  if (!res.ok) throw new Error("Failed to fetch todos!");
+  if (!response.ok) throw new Error("Failed to fetch todos!");
 
-  return res.json();
+  return response.json();
 }
 
 export async function toggleTodoStatus(todoId: number, completed: boolean) {
-  const res = await fetch(`${BASE}/${todoId}`, {
+  const response = await fetch(`${BASE_URL}/${todoId}`, {
     method: "PATCH",
     body: JSON.stringify({ completed }),
     headers: {
       "Content-Type": "application/json",
     },
   });
-  return res.json();
+  return response.json();
 }
 
 export async function createTodo(title: string) {
-  const res = await fetch(BASE, {
+  const response = await fetch(BASE_URL, {
     method: "POST",
     body: JSON.stringify({ title, completed: false }),
     headers: {
       "Content-Type": "application/json",
     },
   });
-  return res.json();
+  return response.json();
 }
